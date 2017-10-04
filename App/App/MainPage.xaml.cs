@@ -1,8 +1,10 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -25,6 +27,9 @@ namespace App
         public MainPage()
         {
             this.InitializeComponent();
+            Organization = new OrganizationViewModel("Office");
         }
+
+        public OrganizationViewModel Organization { get; set; }
     }
 }
