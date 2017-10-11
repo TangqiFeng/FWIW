@@ -1,4 +1,7 @@
-# FWIW 
-## A Minimal MVVM UWP App
-c# => property data binding
-### [Tutorial](https://github.com/TangqiFeng/FWIW/blob/master/MVVM%20Lab.pdf)
+# Mobile application development labs
+(UWP,C#) ---- year 4
+## data binding
+##### read from databases
+App ==> [Text file](https://github.com/TangqiFeng/FWIW/blob/master/MVVM%20Lab.pdf)
+##### read from json file
+App9databind ==> [Text file](https://github.com/TangqiFeng/FWIW/blob/master/MVVM%20Lab%20part%202.pdf)
