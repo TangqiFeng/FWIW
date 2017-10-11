@@ -1,5 +1,5 @@
 # Mobile application development labs
-(UWP,C#) ---- year 4
+(UWP,C#) ---- MVVM ---- year 4 
 ## data binding
 ##### read from databases
 App ==> [Text file](https://github.com/TangqiFeng/FWIW/blob/master/MVVM%20Lab.pdf)
