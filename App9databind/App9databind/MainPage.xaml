@@ -5,9 +5,63 @@
     xmlns:local="using:App9databind"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="using:App9databind.ViewModels"
+    xmlns:converters="using:App9databind.Converters"
     mc:Ignorable="d">
 
+
     <Page.Resources>
+        <converters:ObjectExistsToVisible x:Key="ObjectExistsToVisible" />
+    </Page.Resources>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Orientation="Vertical">
+            <ListView  x:Name="MainList" Height="300"
+              ItemsSource="{x:Bind Organization.Dog, Mode=OneWay}"  
+              SelectedIndex="{x:Bind Organization.SelectedIndex, Mode=TwoWay}" 
+              MinWidth="250" Margin="5">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="viewModels:DogViewModel" >
+                        <TextBlock Text="{x:Bind myBreedName, Mode=OneWay}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Content="Add" Click="{x:Bind  Organization.Add}" Margin="5"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" Orientation="Vertical" Margin="0,50,0,0">
+            <TextBox 
+              Text="{x:Bind Organization.SelectedDog.myBreedName, Mode=TwoWay, FallbackValue=''}" 
+              Margin="5" />
+            <TextBox 
+              Text="{x:Bind Organization.SelectedDog.category, Mode=TwoWay, FallbackValue='0'}" 
+              Margin="5" />
+            <TextBox 
+              Text="{x:Bind Organization.SelectedDog.origin, Mode=TwoWay, FallbackValue='0'}" 
+              Margin="5" />
+            <Image Source="{x:Bind Organization.SelectedDog.source, Mode=OneWay, FallbackValue='0'}" x:Name="imgOneDog" 
+                       Height="100" Width="100" />
+            <Button Content="Delete" Click="{x:Bind Organization.Delete}" Margin="5" />
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" Orientation="Vertical"
+                    Visibility="{x:Bind Organization.SelectedDog, Mode=OneWay, Converter={StaticResource ObjectExistsToVisible}}" />
+    </Grid>
+
+
+
+
+
+
+
+
+
+
+    <!--<Page.Resources>
         <DataTemplate x:Key="myDataTemplate">
             <StackPanel Margin="3,6,3,3" Tapped="StackPanel_Tapped">
                 <TextBlock FontSize="18" FontWeight="Bold" Text="{Binding Path=myBreedName}" Margin="2" Style="{StaticResource TitleTextBlockStyle}" />
@@ -58,5 +112,5 @@
         <Button Grid.Column="1" x:Name="btnNextPage" Content="Next Page" 
                 HorizontalAlignment="Right" VerticalAlignment="Top" Click="btnNextPage_Click" />
 
-    </Grid>
+    </Grid>-->
 </Page>
