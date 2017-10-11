@@ -1,0 +1,52 @@
+﻿<Page
+    x:Class="App9databind.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App9databind"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <DataTemplate x:Key="myDataTemplate">
+            <StackPanel Margin="3,6,3,3" Tapped="StackPanel_Tapped">
+                <TextBlock Text="{Binding Path=myBreedName}" Margin="2" Style="{StaticResource TitleTextBlockStyle}" />
+                <TextBlock Text="{Binding Path=origin}" Margin="2" Style="{StaticResource SubtitleTextBlockStyle}" />
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+    
+    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <StackPanel HorizontalAlignment="Left" Width="250" Margin="10">
+            <TextBlock x:Name="tblTitle" Text="Dog Breeds" Style="{StaticResource TitleTextBlockStyle}" />
+            <ListView x:Name="lvDogs" BorderBrush="Red" BorderThickness="3"
+                        Height="400" HorizontalAlignment="Center" 
+                      ItemTemplate="{StaticResource myDataTemplate}">
+
+            </ListView>
+
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" 
+                    Background="Gray" Opacity="0.6" x:Name="spOneDog" 
+                        Margin="20, 0, 10, 0" Orientation="Horizontal" >
+                <Image Source="Images/akita.jpg" x:Name="imgOneDog" 
+                       Height="100" Width="100" />
+                <StackPanel Margin="10, 0,0,0">
+                    <TextBlock x:Name="tblOneBreed" Text="Breedname" 
+                               Style="{StaticResource TitleTextBlockStyle}" Margin="0,2,0,2" />
+                    <TextBlock x:Name="tblOneCategory" Text="Category" Margin="0,2,0,2" />
+                    <TextBlock x:Name="tblOneOrigin" Text="Origin" Margin="0,2,0,2" />
+                </StackPanel>
+            </StackPanel>
+
+
+
+
+        </StackPanel>
+
+        <Button x:Name="btnNextPage" Content="Next Page" 
+                HorizontalAlignment="Right" VerticalAlignment="Top" Click="btnNextPage_Click" />
+        
+    </Grid>
+</Page>

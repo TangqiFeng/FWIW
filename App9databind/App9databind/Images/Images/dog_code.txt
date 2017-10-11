@@ -1,0 +1,27 @@
+        /// <summary>
+        /// builds my list of dogs using the class in myDogs.cs
+        /// </summary>
+        private void BuildDogList()
+        {
+            myDogList.Add(new myDogs { Name = "Japanese Shiba Inu",
+                                       Activity = "Reasonable Exercise",
+                                       Category = "Utility",
+                                       Grooming = "Reasonable",
+                                       Image="/Images/shiba.jpg" });
+
+            myDogList.Add(new myDogs { Name = "Japanese Spitz", Activity = "Medium Exercise", Category = "Utility", Grooming = "Demanding", Image="/Images/spitz.jpg"});
+            myDogList.Add(new myDogs { Name = "Japanese Akita",Activity = "High Exercise",Category = "Utility",Grooming = "Moderate",Image="/Images/akita.jpg"});
+
+            myDogList.Add(new myDogs { Name = "West Highland Terrier", Activity = "Undemanding Exercise", Category = "Terrier", Grooming = "Moderate", Image = "/Images/westie.jpg" });
+            myDogList.Add(new myDogs { Name = "Cairn Terrier", Activity = "Reasonable Exercise", Category = "Terrier", Grooming = "Medium", Image = "/Images/cairn.jpg" });
+            myDogList.Add(new myDogs { Name = "Staffordshire Bull Terrier", Activity = "Medium Exercise", Category = "Terrier", Grooming = "Easy", Image = "/Images/staffy.jpg" });
+
+            myDogList.Add(new myDogs { Name = "Norwegian Elkhound", Activity = "Moderate Exercise", Category = "Hound", Grooming = "Reasonably easy", Image = "/Images/elkhound.jpg" });
+            myDogList.Add(new myDogs { Name = "Irish Wolfhound", Activity = "Regular Exercise", Category = "Hound", Grooming = "Regular", Image = "/Images/irishwolf.jpg" });
+            myDogList.Add(new myDogs { Name = "Otterhound", Activity = "Essential", Category = "Hound", Grooming = "Fairly Demanding", Image = "/Images/otter.jpg" });
+
+            myDogList.Add(new myDogs { Name = "Siberian Husky", Activity = "Very Demanding", Category = "Working", Grooming = "Medium", Image = "/Images/husky.jpg" });
+            myDogList.Add(new myDogs { Name = "Newfoundland", Activity = "Aquatically Demanding", Category = "Working", Grooming = "Fairly Demanding", Image = "/Images/newfie.jpg" });
+            myDogList.Add(new myDogs { Name = "Welsh Corgi", Activity = "Medium", Category = "Working", Grooming = "Medium", Image = "/Images/otter.jpg" });
+
+        } // end of BuildDogList
