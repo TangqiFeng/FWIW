@@ -10,43 +10,53 @@
     <Page.Resources>
         <DataTemplate x:Key="myDataTemplate">
             <StackPanel Margin="3,6,3,3" Tapped="StackPanel_Tapped">
-                <TextBlock Text="{Binding Path=myBreedName}" Margin="2" Style="{StaticResource TitleTextBlockStyle}" />
-                <TextBlock Text="{Binding Path=origin}" Margin="2" Style="{StaticResource SubtitleTextBlockStyle}" />
+                <TextBlock FontSize="18" FontWeight="Bold" Text="{Binding Path=myBreedName}" Margin="2" Style="{StaticResource TitleTextBlockStyle}" />
+                <TextBlock FontSize="18" Text="{Binding Path=origin}" Margin="2" Style="{StaticResource SubtitleTextBlockStyle}" />
             </StackPanel>
         </DataTemplate>
     </Page.Resources>
-    
-    
+
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-        <StackPanel HorizontalAlignment="Left" Width="250" Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" HorizontalAlignment="Left" Width="250" Margin="10">
             <TextBlock x:Name="tblTitle" Text="Dog Breeds" Style="{StaticResource TitleTextBlockStyle}" />
-            <ListView x:Name="lvDogs" BorderBrush="Red" BorderThickness="3"
-                        Height="400" HorizontalAlignment="Center" 
-                      ItemTemplate="{StaticResource myDataTemplate}">
+            <ListView x:Name="lvDogs" BorderBrush="Red" BorderThickness="2"
+                        Height="400" HorizontalAlignment="Right" 
+                      ItemTemplate="{StaticResource myDataTemplate}" Margin="0,0,10,0">
 
             </ListView>
-
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" 
-                    Background="Gray" Opacity="0.6" x:Name="spOneDog" 
-                        Margin="20, 0, 10, 0" Orientation="Horizontal" >
-                <Image Source="Images/akita.jpg" x:Name="imgOneDog" 
-                       Height="100" Width="100" />
-                <StackPanel Margin="10, 0,0,0">
-                    <TextBlock x:Name="tblOneBreed" Text="Breedname" 
+        </StackPanel>
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" 
+                    x:Name="spOneDogText" Margin="20, 50, 10, 0" Orientation="Vertical" >
+            <StackPanel Margin="10, 0,0,0">
+                <TextBlock x:Name="txtlOneBreed" Text="Breedname" 
                                Style="{StaticResource TitleTextBlockStyle}" Margin="0,2,0,2" />
-                    <TextBlock x:Name="tblOneCategory" Text="Category" Margin="0,2,0,2" />
-                    <TextBlock x:Name="tblOneOrigin" Text="Origin" Margin="0,2,0,2" />
-                </StackPanel>
+                <TextBlock x:Name="txtlOneCategory" Text="Category" Margin="0,2,0,2" />
+                <TextBlock x:Name="txtlOneOrigin" Text="Origin" Margin="0,2,0,2" />
             </StackPanel>
-
-
-
-
+            <Image Source="Images/akita.jpg" x:Name="imgDog" Height="100" Width="100" />
+        </StackPanel>
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" 
+                    Background="Gray" Opacity="0.6" x:Name="spOneDog" 
+                        Margin="20, 10, 10, 50" Orientation="Vertical" >
+            <Image Source="Images/akita.jpg" x:Name="imgOneDog" 
+                       Height="100" Width="100" />
+            <StackPanel Margin="10, 0,0,0">
+                <TextBlock x:Name="tblOneBreed" Text="Breedname" 
+                               Style="{StaticResource TitleTextBlockStyle}" Margin="0,2,0,2" />
+                <TextBlock x:Name="tblOneCategory" Text="Category" Margin="0,2,0,2" />
+                <TextBlock x:Name="tblOneOrigin" Text="Origin" Margin="0,2,0,2" />
+            </StackPanel>
         </StackPanel>
 
-        <Button x:Name="btnNextPage" Content="Next Page" 
+        <Button Grid.Column="1" x:Name="btnNextPage" Content="Next Page" 
                 HorizontalAlignment="Right" VerticalAlignment="Top" Click="btnNextPage_Click" />
-        
+
     </Grid>
 </Page>

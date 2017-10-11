@@ -143,6 +143,10 @@ namespace App9databind
             tblOneCategory.Text = _myList[lvDogs.SelectedIndex].category;
             tblOneOrigin.Text = _myList[lvDogs.SelectedIndex].origin;
 
+            txtlOneBreed.Text = _myList[lvDogs.SelectedIndex].myBreedName;
+            txtlOneCategory.Text = _myList[lvDogs.SelectedIndex].category;
+            txtlOneOrigin.Text = _myList[lvDogs.SelectedIndex].origin;
+
             // get the picture
             // check for the file existing.
             // if( fileexists(_myList[lvdogs.SelectedIndex].imgSource )
@@ -159,6 +163,7 @@ namespace App9databind
             BitmapImage myBitmap = new BitmapImage(myUri);
             // use the bitmap as the source for the image.
             imgOneDog.Source = myBitmap;
+            imgDog.Source = myBitmap;
 
 
 
